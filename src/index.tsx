@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal"
-import "./index.css";
+import "./assets/styles/index.css";
 import { ShopApp } from "./shop-app";
 import * as serviceWorker from "./serviceWorker";
 

@@ -5,10 +5,10 @@ import { FaTimes } from "react-icons/fa";
 import { Button } from "./components/button";
 import ProductList from "./components/product-list-components";
 import { Form } from "./components/form";
-import logo from "./images/droppe-logo.png";
-import img1 from "./images/img1.png";
-import img2 from "./images/img2.png";
-import styles from "./shopApp.module.css";
+import logo from "./assets/images/droppe-logo.png";
+import img1 from "./assets/images/img1.png";
+import img2 from "./assets/images/img2.png";
+import styles from "./assets/styles/modules/shopApp.module.css";
 
 export class ShopApp extends React.Component<
   {},
