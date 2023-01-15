@@ -1,5 +1,4 @@
 import * as React from "react";
-import lodash from 'lodash'
 import { FaStar } from "react-icons/fa";
 import styles from "../assets/styles/modules/product-list-components.module.css";
 
@@ -12,13 +11,13 @@ interface IPostsProps {
 export default class Posts extends React.Component<IPostsProps, {}> {
   constructor(props: any) { super(props) }
   render(){
-    let productsarr = []
+    let productsArray = []
       for (const [i, p] of this.props.products.entries()) {
-        productsarr.push(
+          productsArray.push(
           <Product key={i} index={i} product={p} onFav={this.props.onFav} />
         );
     }
-    return <div>{lodash.reverse(productsarr)}</div>
+    return <div>{productsArray.reverse()}</div>
   }
 }
 
@@ -53,7 +52,7 @@ export const Product: React.FC<{
               onFav(product.title);
           }}
         >
-          <FaStar /> <span className={actionBarItemLabel}>{!!(!!(product.isFavorite)) ? 'Remove from favorites' : 'Add to favorites'}</span>
+          <FaStar /> <span className={actionBarItemLabel}>{((product.isFavorite)) ? 'Remove from favorites' : 'Add to favorites'}</span>
         </span>
       </span>
     </span>

@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "../assets/styles/modules/button.module.css";
 
 interface props {
-  children: any;
+  children: React.ReactChildren | HTMLElement | string;
   onClick?: () => void;
 }
 
