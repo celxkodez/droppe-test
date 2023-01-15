@@ -17,7 +17,7 @@ export class ShopApp extends React.Component<
   constructor(props: any) {
     super(props);
 
-    this.favClick = this.favClick.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = { products: [], isOpen: false, isShowingMessage: false, message: '', numFavorites: 0, prodCount: 0 };
@@ -46,7 +46,7 @@ export class ShopApp extends React.Component<
       document.title = "Droppe refactor app"
    }
 
-  favClick(title: string) {
+  toggleFavorite(title: string) {
     const prods = this.state.products;
     const idx = lodash.findIndex(prods, {title: title})
     let currentFavs = this.state.numFavorites
@@ -151,7 +151,7 @@ export class ShopApp extends React.Component<
             <span>Number of favorites: {this.state.numFavorites}</span>
           </div>
 
-          {products && !!products.length ? <ProductList products={products} onFav={this.favClick} /> : <div></div>}
+          {products && !!products.length ? <ProductList products={products} onToggleFavorite={this.toggleFavorite} /> : <div></div>}
         </div>
 
         <>
