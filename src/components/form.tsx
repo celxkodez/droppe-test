@@ -38,30 +38,36 @@ export const Form: React.FC<IFormProps> = ({ onSubmit }) => {
 
   return (
     <form className={styles.form} onSubmit={(event) => handleSubmit(event)} ref={formRef}>
-      <span className={styles.label}>Product title: *</span>
+        <label htmlFor="product-title" className={styles.label}>Product title: *</label>
 
-      <input
-        ref={titleRef}
-        placeholder="Title..."
-        defaultValue=""
-        className={styles.input}
-      />
+        <input
+            type="text"
+            id="product-title"
+            ref={titleRef}
+            placeholder="Title..."
+            defaultValue=""
+            className={styles.input}
+        />
 
-      <span className={styles.label}>Product details: *</span>
+        <label htmlFor="product-price" className={styles.label}>Product details: *</label>
 
-      <input
-        ref={priceRef}
-        placeholder="Price..."
-        defaultValue=""
-        className={styles.input}
-      />
+        <input
+            type="number"
+            id="product-price"
+            ref={priceRef}
+            placeholder="Price..."
+            defaultValue=""
+            className={styles.input}
+        />
 
-      <textarea
-        ref={descriptionRef}
-        placeholder="Start typing product description here..."
-        defaultValue=""
-        className={styles.textarea}
-      />
+        <label htmlFor="product-descriptions" className={styles.label}>Product descriptions:</label>
+        <textarea
+            ref={descriptionRef}
+            id="product-descriptions"
+            placeholder="Start typing product description here..."
+            defaultValue=""
+            className={styles.textarea}
+        />
 
       <Button>Add a product</Button>
     </form>
