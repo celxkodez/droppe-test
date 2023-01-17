@@ -35,7 +35,7 @@ afterEach(() => {
 });
 export default describe('Test Api Client Request', () => {
 
-    it('should return a valid promise response', function () {
+    test('should return a valid promise response', function () {
         const clientRequest: Promise<any> = APIClientRequest('https://localhost/#')
 
         expect(clientRequest).resolves.toBeTruthy()
