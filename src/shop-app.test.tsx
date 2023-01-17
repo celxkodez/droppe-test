@@ -7,7 +7,7 @@ import userEvent from "@testing-library/user-event";
 import Modal from "react-modal";
 
 it('ensure app is rendered without crashing', () => {
-    const div = document.createElement('div');
+    const div: HTMLElement = document.createElement('div');
     ReactDOM.render(<ShopApp />, div);
 });
 
@@ -16,16 +16,16 @@ describe('ensure that adding of product can be done',  () => {
         render(<ShopApp />)
         Modal.setAppElement(document.body)
 
-        const sendProductModalButton: any = screen.getByText('Send product proposal')
+        const sendProductModalButton: HTMLElement = screen.getByText('Send product proposal')
         expect(sendProductModalButton).toBeDefined()
 
         userEvent.click(sendProductModalButton)
         const sendProductFormButton = screen.getByText('Add a product')
         expect(sendProductFormButton).toBeDefined()
 
-        const productTitleInput = screen.getByLabelText('Product title: *')
-        const productPriceInput = screen.getByLabelText('Product details: *')
-        const productDescriptionInput = screen.getByLabelText('Product descriptions:')
+        const productTitleInput: HTMLElement = screen.getByLabelText('Product title: *')
+        const productPriceInput: HTMLElement = screen.getByLabelText('Product details: *')
+        const productDescriptionInput: HTMLElement = screen.getByLabelText('Product descriptions:')
 
         userEvent.type(productTitleInput, 'New Product Title');
         userEvent.type(productPriceInput, '500');

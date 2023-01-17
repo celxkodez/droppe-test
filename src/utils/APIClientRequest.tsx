@@ -1,5 +1,5 @@
-const  APIClientRequest = (url: string, options = {}) => {
-    let returnedData: any
+const  APIClientRequest = (url: string, options: any = {}): Promise<any> => {
+    let returnedData: Promise<any>
 
     returnedData = fetch(url, options)
         .then(response =>response.json())
